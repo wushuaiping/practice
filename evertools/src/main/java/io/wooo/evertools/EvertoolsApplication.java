@@ -1,0 +1,13 @@
+package io.wooo.evertools;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EvertoolsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EvertoolsApplication.class, args);
+	}
+
+}
