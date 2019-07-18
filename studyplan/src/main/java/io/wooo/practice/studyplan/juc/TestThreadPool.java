@@ -11,7 +11,6 @@ import java.util.concurrent.Future;
  * Created by wushuaiping on 2019/7/18
  */
 public class TestThreadPool {
-
     public static void main(String[] args) {
         // 创建一个线程池
         ExecutorService pool = Executors.newFixedThreadPool(5);
@@ -27,5 +26,4 @@ public class TestThreadPool {
         }
         pool.shutdown();
     }
-
 }
