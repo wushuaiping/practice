@@ -3,6 +3,7 @@ package io.wooo.practice.studyplan.juc;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ *  自旋锁
  * @author wushuaiping
  * @date 2019/7/25 16:20
  */
