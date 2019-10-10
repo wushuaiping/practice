@@ -11,10 +11,10 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchDemo {
     public static void main(String[] args) {
-        CountDownLatch cdl = new CountDownLatch(2);
+        CountDownLatch cdl = new CountDownLatch(1);
         TreadDemo treadDemo = new TreadDemo(cdl);
         long startTime = System.nanoTime();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             new Thread(treadDemo).start();
         }
         try {
