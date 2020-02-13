@@ -1,4 +1,4 @@
-package io.wooo.practice.studyplan.test;
+package io.wooo.practice.studyplan.juc;
 
 /**
  * 守护线程，当main线程执行完毕后，daemon线程会随之关闭。

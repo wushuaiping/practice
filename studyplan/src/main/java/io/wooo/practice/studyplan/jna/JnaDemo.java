@@ -1,4 +1,4 @@
-package io.wooo.practice.studyplan;
+package io.wooo.practice.studyplan.jna;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;

@@ -1,4 +1,4 @@
-package io.wooo.practice.studyplan.test;
+package io.wooo.practice.studyplan.juc;
 
 /**
  * @author wushuaiping
