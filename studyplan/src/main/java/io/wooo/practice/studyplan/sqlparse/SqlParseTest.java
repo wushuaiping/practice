@@ -26,6 +26,6 @@ public class SqlParseTest {
     }
 
     public static Object exec(String sql, String jdbcType){
-        List<SQLStatement> statementList = SQLUtils.parseStatements(sql, dbType);
+        return SQLUtils.parseStatements(sql, jdbcType);
     }
 }
