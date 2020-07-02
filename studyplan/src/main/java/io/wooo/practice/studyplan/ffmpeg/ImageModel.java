@@ -5,10 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.File;
-
 /**
  * 图片对象
+ *
  * @author wb-wsp312690
  */
 @Setter
