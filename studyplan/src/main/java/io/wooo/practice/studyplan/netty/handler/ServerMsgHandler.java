@@ -11,9 +11,13 @@ import java.nio.charset.StandardCharsets;
 public class ServerMsgHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg){
-        ByteBuf byteBuf = (ByteBuf) msg;
-        String json = byteBuf.toString(StandardCharsets.UTF_8);
-        UserDto userDto = new Gson().fromJson(json, UserDto.class);
-        System.out.println("收到客户端消息" + new Gson().toJson(userDto));
+        UserDto userDto = new Gson().fromJson((String) msg, UserDto.class);
+        System.out.println("收到客户端消息：" + new Gson().toJson(userDto));
+        // 处理成功客户端消息 向客户端回写消息
+        ByteBuf buffer = ctx.alloc().buffer();
+        String returnMsg = "SUCCESS";
+        buffer.writeBytes(returnMsg.getBytes(StandardCharsets.UTF_8));
+        ctx.writeAndFlush(buffer);
+        System.out.println("向客户端回写消息");
     }
 }

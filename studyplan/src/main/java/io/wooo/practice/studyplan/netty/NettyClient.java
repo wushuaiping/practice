@@ -24,6 +24,14 @@ public class NettyClient {
                     protected void initChannel(Channel ch) throws Exception {
                         ch.pipeline().addLast(new ClientMsgHandler());
                     }
-                }).connect("127.0.0.1", 8000).channel();;
+                })
+                .connect("127.0.0.1", 8000)
+                .addListener(future -> {
+                    if (future.isSuccess()){
+                        System.out.println("连接服务端成功");
+                    }else {
+                        System.out.println("连接服务端失败");
+                    }
+                });
     }
 }

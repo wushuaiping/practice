@@ -29,7 +29,18 @@ public class NettyServer {
                         ch.pipeline().addLast(new StringDecoder());
                         ch.pipeline().addLast(new ServerMsgHandler());
                     }
-                })
-                .bind(8000);
+                });
+        bind(serverBootstrap, 8000);
+    }
+
+    private static void bind(ServerBootstrap serverBootstrap, int port){
+        serverBootstrap.bind(port).addListener(future -> {
+            if (future.isSuccess()) {
+                System.out.println("端口[" + port + "]绑定成功!");
+            } else {
+                System.err.println("端口[" + port + "]绑定失败!");
+                bind(serverBootstrap, port + 1);
+            }
+        });
     }
 }
