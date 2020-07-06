@@ -5,8 +5,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.wooo.practice.studyplan.netty.handler.ServerMsgHandler;
+import io.wooo.practice.studyplan.netty.handler.ServerHandler;
 
 /**
  * @author wushuaiping
@@ -26,8 +25,7 @@ public class NettyServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new StringDecoder());
-                        ch.pipeline().addLast(new ServerMsgHandler());
+                        ch.pipeline().addLast(new ServerHandler());
                     }
                 });
         bind(serverBootstrap, 8000);
